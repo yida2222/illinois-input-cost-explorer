@@ -2,6 +2,8 @@
 
 Independent student prototype prepared September 17, 2026. Open `index.html` in a browser; it has no installation requirements and makes no network requests to run. The source links open only if the user clicks them.
 
+**Data status:** The public webpage still displays the manually verified sample observations below. USDA MyMarketNews report 3195 has an authenticated API, but it cannot be called directly from a public browser. The repository includes a manual diagnostic GitHub Action that can fetch a recent JSON sample after the repository owner adds a personal `USDA_MMN_API_KEY` secret. The sample is kept as a one-day Actions artifact, not committed into the public repository. We will map and validate the actual API fields before enabling automatic updates or labeling the webpage as API-fed.
+
 ## Purpose
 
 Display a small number of verified public Illinois input-price observations alongside a transparent sensitivity analysis for the 2027 Central Illinois high-productivity crop budget. This is an exploratory budget scenario, not a yield model, price forecast, agronomic recommendation, or official farmdoc tool.

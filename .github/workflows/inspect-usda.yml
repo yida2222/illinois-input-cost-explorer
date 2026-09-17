@@ -1,0 +1,20 @@
+name: Inspect USDA report data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch authenticated published report sample
+        env:
+          USDA_MMN_API_KEY: ${{ secrets.USDA_MMN_API_KEY }}
+        run: python3 scripts/fetch_usda.py
+      - name: Store sample for schema review
+        uses: actions/upload-artifact@v4
+        with:
+          name: ams-3195-sample
+          path: data/ams_3195_sample.json
+          retention-days: 1
