@@ -16,7 +16,7 @@ Display verified public Illinois input-price observations alongside a transparen
 
 The site shows report-dated USDA observations from the last 365 days when the automated data file is available. Its status line states the latest report end date. USDA quotations are distributor asking-price averages, not transaction prices paid by a specific farm. A stale or missing report must not be described as a live farm price.
 
-The observation graphic marks every validated report date; with four or more points, a line connects the observations without estimating unreported dates. A separate sensitivity curve is calculated from the published budget across fertilizer-cost changes from −30% to +80%, holding the currently selected fuel and crop-price assumptions fixed. Its lines represent model outputs, not observed returns, estimated probabilities, or forecasts. The horizontal zero line is zero farmer return.
+The observation graphic marks every validated report date, displays price-axis values, and highlights the latest average and change from the prior report. With four or more points, a line connects the observations without estimating unreported dates. A separate sensitivity curve is calculated from the published budget across fertilizer-cost changes from −30% to +80%, holding the currently selected fuel and crop-price assumptions fixed. Its lines represent model outputs, not observed returns, estimated probabilities, or forecasts. The horizontal zero line is zero farmer return. The full budget table can be expanded when a reviewer needs to inspect the arithmetic.
 
 ## Budget inputs and formulas
 
