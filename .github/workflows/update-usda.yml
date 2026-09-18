@@ -19,11 +19,13 @@ jobs:
         run: python3 scripts/fetch_usda.py
       - name: Validate and normalize observations
         run: python3 scripts/normalize_usda.py
+      - name: Refresh self-contained offline copy
+        run: python3 scripts/build_offline.py
       - name: Publish validated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/prices.json
+          git add data/prices.json Illinois_Input_Cost_Explorer_Offline.html
           if ! git diff --cached --quiet; then
             git commit -m "Update validated USDA prices"
             git push

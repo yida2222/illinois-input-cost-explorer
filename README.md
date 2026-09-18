@@ -1,16 +1,16 @@
 # Illinois Input Cost Explorer
 
-Independent student prototype prepared September 17, 2026. Open `index.html` in a browser. It has no installation requirements; when hosted, it reads the public `data/prices.json` file generated from USDA AMS. If that file is unavailable, it displays a clearly labeled, dated sample embedded in the page.
+Independent student prototype prepared September 17, 2026. The public `index.html` reads `data/prices.json` generated from USDA AMS. For a portable local copy, open `Illinois_Input_Cost_Explorer_Offline.html` directly in a browser: it embeds the validated USDA price snapshot and needs no server or installation. The offline snapshot does not update itself; rebuild it with `python3 scripts/build_offline.py` after the data file changes.
 
 **Data pipeline:** A GitHub Action fetches the most recent 365 days of USDA MyMarketNews report 3195 on Mondays and Fridays and on manual request. The repository owner stores a personal `USDA_MMN_API_KEY` as an Actions Secret. The key is used only in the Action and is not sent to visitors or stored in the site. `scripts/normalize_usda.py` validates the report section, product class, Illinois location, asking-price basis, unit, distributor category, final report status, and average price before publishing `data/prices.json`. The raw API response is retained as a one-day Actions artifact and is excluded from the public repository.
 
 ## Purpose
 
-Display verified public Illinois input-price observations alongside a transparent sensitivity analysis for the 2027 Central Illinois high-productivity crop budget. This is an exploratory budget scenario, not a yield model, price forecast, agronomic recommendation, or official farmdoc tool.
+Display verified public Illinois input-price observations alongside a transparent sensitivity analysis for four published 2027 Illinois crop budgets. This is an exploratory budget scenario, not a yield model, price forecast, agronomic recommendation, or official farmdoc tool.
 
 ## Sources
 
-- Gary Schnitkey and Nick Paulson, *2027 Crop Budgets for All Regions*, Table 2 (Central Illinois, high-productivity farmland), original release August 2026: https://farmdoc.illinois.edu/assets/management/crop-budgets/crop_budgets_2026_Aug.pdf
+- Gary Schnitkey and Nick Paulson, *2027 Crop Budgets for All Regions*, Tables 1–4, original release August 2026: https://farmdoc.illinois.edu/assets/management/crop-budgets/crop_budgets_2026_Aug.pdf
 - USDA AMS, *Illinois Production Cost Report (Bi-weekly)*, report 3195: https://mymarketnews.ams.usda.gov/viewReport/3195
 - Nick Paulson et al., *Fertilizer and Fuel Prices Higher Heading into Fall 2026*, August 11, 2026, for the selected August 7 observations: https://farmdocdaily.illinois.edu/2026/08/fertilizer-and-fuel-prices-higher-heading-into-fall-2026.html
 
@@ -20,16 +20,16 @@ The observation graphic marks every validated report date, displays price-axis v
 
 ## Budget inputs and formulas
 
-| 2027 Table 2 line item, dollars per acre unless noted | Corn after soybeans | Soybeans after corn |
+The region selector uses corn after soybeans and soybeans after corn in every table. Northern and Southern Illinois have no productivity subclass in the source.
+
+| Published table and region | Corn baseline farmer return, $/acre | Soybean baseline farmer return, $/acre |
 | --- | ---: | ---: |
-| Yield, bushels per acre | 245 | 77 |
-| Crop price, dollars per bushel | 5.00 | 12.00 |
-| ARC/PLC payment | 17 | 17 |
-| Fertilizer | 263 | 77 |
-| Fuel and oil | 30 | 26 |
-| Total non-land costs | 885 | 534 |
-| Land costs | 321 | 321 |
-| Farmer return | 36 | 86 |
+| Table 1 · Northern Illinois | 38 | 68 |
+| Table 2 · Central Illinois, high productivity | 36 | 86 |
+| Table 3 · Central Illinois, low productivity | 39 | 74 |
+| Table 4 · Southern Illinois | −51 | 18 |
+
+The application stores each region's published yield, crop price, ARC/PLC payment, fertilizer cost, fuel cost, total non-land costs, and land costs. Changing region replaces **all** of these inputs together. The comparison table shows published baseline farmer returns; it does not apply the active slider assumptions across regions.
 
 For each crop, the page computes:
 
