@@ -1,0 +1,141 @@
+{
+  "source": "USDA AMS MyMarketNews API",
+  "slug_id": 3195,
+  "report_url": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+  "latest_report_date": "2026-09-04",
+  "latest_published": "2026-09-04T07:48:08",
+  "series": {
+    "ammonia": [
+      {
+        "date": "2026-06-26",
+        "value": 1057.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-06-26T07:04:38"
+      },
+      {
+        "date": "2026-07-10",
+        "value": 1057.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-07-10T08:22:16"
+      },
+      {
+        "date": "2026-07-24",
+        "value": 1022.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-07-24T07:27:25"
+      },
+      {
+        "date": "2026-08-07",
+        "value": 915.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-08-07T08:25:17"
+      },
+      {
+        "date": "2026-08-21",
+        "value": 890.0,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-08-21T08:21:51"
+      },
+      {
+        "date": "2026-09-04",
+        "value": 892.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-09-04T07:48:08"
+      }
+    ],
+    "urea": [
+      {
+        "date": "2026-06-26",
+        "value": 752.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-06-26T07:04:38"
+      },
+      {
+        "date": "2026-07-10",
+        "value": 752.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-07-10T08:22:16"
+      },
+      {
+        "date": "2026-07-24",
+        "value": 752.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-07-24T07:27:25"
+      },
+      {
+        "date": "2026-08-07",
+        "value": 752.5,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-08-07T08:25:17"
+      },
+      {
+        "date": "2026-08-21",
+        "value": 722.0,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-08-21T08:21:51"
+      },
+      {
+        "date": "2026-09-04",
+        "value": 722.0,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-09-04T07:48:08"
+      }
+    ],
+    "diesel": [
+      {
+        "date": "2026-06-26",
+        "value": 3.79,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-06-26T07:04:38"
+      },
+      {
+        "date": "2026-07-10",
+        "value": 3.88,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-07-10T08:22:16"
+      },
+      {
+        "date": "2026-07-24",
+        "value": 4.44,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-07-24T07:27:25"
+      },
+      {
+        "date": "2026-08-07",
+        "value": 4.65,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-08-07T08:25:17"
+      },
+      {
+        "date": "2026-08-21",
+        "value": 5.19,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-08-21T08:21:51"
+      },
+      {
+        "date": "2026-09-04",
+        "value": 5.45,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-09-04T07:48:08"
+      }
+    ]
+  }
+}

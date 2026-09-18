@@ -1,8 +1,4 @@
-"""Fetch a small authenticated sample of USDA AMS report 3195.
-
-This diagnostic step keeps the personal API key out of the public website and
-lets us inspect the report's actual JSON structure before mapping price fields.
-"""
+"""Fetch published USDA AMS report 3195 data with a server-side API key."""
 
 import base64
 import json
@@ -12,8 +8,8 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 
-URL = "https://marsapi.ams.usda.gov/services/v1.2/reports/3195?lastDays=90&allSections=true"
-OUTPUT = Path("data/ams_3195_sample.json")
+URL = "https://marsapi.ams.usda.gov/services/v1.2/reports/3195?lastDays=365&allSections=true"
+OUTPUT = Path("data/ams_3195_raw.json")
 
 
 def main() -> None:
@@ -42,7 +38,7 @@ def main() -> None:
         raise SystemExit("USDA API returned an unexpected JSON root.")
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    print(f"Saved published report sample to {OUTPUT}; API key was not saved.")
+    print(f"Saved published report data to {OUTPUT}; API key was not saved.")
 
 
 if __name__ == "__main__":

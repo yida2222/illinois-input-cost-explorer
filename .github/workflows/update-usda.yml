@@ -1,0 +1,36 @@
+name: Update USDA prices
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 16 * * 1,5'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch authenticated USDA report
+        env:
+          USDA_MMN_API_KEY: ${{ secrets.USDA_MMN_API_KEY }}
+        run: python3 scripts/fetch_usda.py
+      - name: Validate and normalize observations
+        run: python3 scripts/normalize_usda.py
+      - name: Publish validated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/prices.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update validated USDA prices"
+            git push
+          fi
+      - name: Keep raw response briefly for audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: usda-report-3195-raw
+          path: data/ams_3195_raw.json
+          retention-days: 1

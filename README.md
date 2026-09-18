@@ -1,22 +1,22 @@
 # Illinois Input Cost Explorer
 
-Independent student prototype prepared September 17, 2026. Open `index.html` in a browser; it has no installation requirements and makes no network requests to run. The source links open only if the user clicks them.
+Independent student prototype prepared September 17, 2026. Open `index.html` in a browser. It has no installation requirements; when hosted, it reads the public `data/prices.json` file generated from USDA AMS. If that file is unavailable, it displays a clearly labeled, dated sample embedded in the page.
 
-**Data status:** The public webpage still displays the manually verified sample observations below. USDA MyMarketNews report 3195 has an authenticated API, but it cannot be called directly from a public browser. The repository includes a manual diagnostic GitHub Action that can fetch a recent JSON sample after the repository owner adds a personal `USDA_MMN_API_KEY` secret. The sample is kept as a one-day Actions artifact, not committed into the public repository. We will map and validate the actual API fields before enabling automatic updates or labeling the webpage as API-fed.
+**Data pipeline:** A GitHub Action fetches the most recent 365 days of USDA MyMarketNews report 3195 on Mondays and Fridays and on manual request. The repository owner stores a personal `USDA_MMN_API_KEY` as an Actions Secret. The key is used only in the Action and is not sent to visitors or stored in the site. `scripts/normalize_usda.py` validates the report section, product class, Illinois location, asking-price basis, unit, distributor category, final report status, and average price before publishing `data/prices.json`. The raw API response is retained as a one-day Actions artifact and is excluded from the public repository.
 
 ## Purpose
 
-Display a small number of verified public Illinois input-price observations alongside a transparent sensitivity analysis for the 2027 Central Illinois high-productivity crop budget. This is an exploratory budget scenario, not a yield model, price forecast, agronomic recommendation, or official farmdoc tool.
+Display verified public Illinois input-price observations alongside a transparent sensitivity analysis for the 2027 Central Illinois high-productivity crop budget. This is an exploratory budget scenario, not a yield model, price forecast, agronomic recommendation, or official farmdoc tool.
 
 ## Sources
 
 - Gary Schnitkey and Nick Paulson, *2027 Crop Budgets for All Regions*, Table 2 (Central Illinois, high-productivity farmland), original release August 2026: https://farmdoc.illinois.edu/assets/management/crop-budgets/crop_budgets_2026_Aug.pdf
-- USDA AMS, *Illinois Production Cost Report*, September 4, 2026: https://www.ams.usda.gov/mnreports/ams_3195.pdf
+- USDA AMS, *Illinois Production Cost Report (Bi-weekly)*, report 3195: https://mymarketnews.ams.usda.gov/viewReport/3195
 - Nick Paulson et al., *Fertilizer and Fuel Prices Higher Heading into Fall 2026*, August 11, 2026, for the selected August 7 observations: https://farmdocdaily.illinois.edu/2026/08/fertilizer-and-fuel-prices-higher-heading-into-fall-2026.html
 
-The price series is intentionally sparse: ammonia and diesel have two verified observations, while urea has one. Do not infer a full trend or current market price from these points. The USDA quotations are distributor asking-price averages, not transaction prices paid by a specific farm.
+The site shows report-dated USDA observations from the last 365 days when the automated data file is available. Its status line states the latest report end date. USDA quotations are distributor asking-price averages, not transaction prices paid by a specific farm. A stale or missing report must not be described as a live farm price.
 
-The observation graphic shows separate dots rather than a line because only one or two dates are verified. A separate sensitivity curve is calculated from the published budget across fertilizer-cost changes from −30% to +80%, holding the currently selected fuel and crop-price assumptions fixed. Its lines represent model outputs, not observed returns, estimated probabilities, or forecasts. The horizontal zero line is zero farmer return.
+The observation graphic marks every validated report date; with four or more points, a line connects the observations without estimating unreported dates. A separate sensitivity curve is calculated from the published budget across fertilizer-cost changes from −30% to +80%, holding the currently selected fuel and crop-price assumptions fixed. Its lines represent model outputs, not observed returns, estimated probabilities, or forecasts. The horizontal zero line is zero farmer return.
 
 ## Budget inputs and formulas
 
@@ -56,4 +56,4 @@ These checks validate arithmetic only. They do not validate whether any particul
 
 ## Possible next step after professor feedback
 
-If the research team finds it useful, expand the historical price series via the USDA MyMarketNews API and add its corrected-report handling. Any use of nonpublic FBFM data would require authorization and a separate data-handling plan. The prototype should not be publicly represented as affiliated with the University of Illinois or farmdoc.
+If the research team finds it useful, extend the archive beyond the current rolling year and add explicit corrected-report monitoring. Any use of nonpublic FBFM data would require authorization and a separate data-handling plan. The prototype should not be publicly represented as affiliated with the University of Illinois or farmdoc.
