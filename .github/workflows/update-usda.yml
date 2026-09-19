@@ -3,7 +3,8 @@ name: Update USDA prices
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 16 * * 1,5'
+    # Check every weekday so each new or corrected bi-weekly report is picked up promptly.
+    - cron: '30 16 * * 1-5'
 
 permissions:
   contents: write
