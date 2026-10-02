@@ -2,8 +2,8 @@
   "source": "USDA AMS MyMarketNews API",
   "slug_id": 3195,
   "report_url": "https://mymarketnews.ams.usda.gov/viewReport/3195",
-  "latest_report_date": "2026-09-18",
-  "latest_published": "2026-09-18T15:30:23",
+  "latest_report_date": "2026-10-02",
+  "latest_published": "2026-10-02T09:32:46",
   "series": {
     "ammonia": [
       {
@@ -187,6 +187,13 @@
         "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
         "note": "USDA AMS report 3195",
         "published": "2026-09-18T15:30:23"
+      },
+      {
+        "date": "2026-10-02",
+        "value": 945.0,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-10-02T09:32:46"
       }
     ],
     "urea": [
@@ -371,6 +378,13 @@
         "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
         "note": "USDA AMS report 3195",
         "published": "2026-09-18T15:30:23"
+      },
+      {
+        "date": "2026-10-02",
+        "value": 770.0,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-10-02T09:32:46"
       }
     ],
     "diesel": [
@@ -555,6 +569,13 @@
         "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
         "note": "USDA AMS report 3195",
         "published": "2026-09-18T15:30:23"
+      },
+      {
+        "date": "2026-10-02",
+        "value": 5.63,
+        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
+        "note": "USDA AMS report 3195",
+        "published": "2026-10-02T09:32:46"
       }
     ]
   }
