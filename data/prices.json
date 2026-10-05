@@ -7,13 +7,6 @@
   "series": {
     "ammonia": [
       {
-        "date": "2025-10-03",
-        "value": 816.0,
-        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
-        "note": "USDA AMS report 3195",
-        "published": "2025-10-03T08:26:13"
-      },
-      {
         "date": "2025-10-17",
         "value": 816.0,
         "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
@@ -198,13 +191,6 @@
     ],
     "urea": [
       {
-        "date": "2025-10-03",
-        "value": 607.0,
-        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
-        "note": "USDA AMS report 3195",
-        "published": "2025-10-03T08:26:13"
-      },
-      {
         "date": "2025-10-17",
         "value": 607.0,
         "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
@@ -388,13 +374,6 @@
       }
     ],
     "diesel": [
-      {
-        "date": "2025-10-03",
-        "value": 2.93,
-        "source": "https://mymarketnews.ams.usda.gov/viewReport/3195",
-        "note": "USDA AMS report 3195",
-        "published": "2025-10-03T08:26:13"
-      },
       {
         "date": "2025-10-17",
         "value": 2.87,
